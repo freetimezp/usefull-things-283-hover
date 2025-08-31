@@ -9,3 +9,114 @@
 a {
     text-decoration: none;
 }
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #d8003a;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+a {
+    font-size: 32px;
+    color: #262626;
+    display: flex;
+    text-transform: uppercase;
+    height: 80px;
+}
+
+a div {
+    display: inline-block;
+    background: #fff;
+    position: relative;
+    text-align: center;
+    line-height: 80px;
+    overflow: hidden;
+}
+
+a div span {
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+a div:nth-child(1) {
+    width: 250px;
+    height: 100%;
+}
+
+a div:nth-child(2) {
+    width: 80px;
+    height: 100%;
+    border-left: 1px solid #ccc;
+}
+
+a div:nth-child(1) div,
+a div:nth-child(2) div {
+    width: 100%;
+    position: relative;
+}
+
+a div:nth-child(1) div {
+    background-color: #fff;
+}
+
+a div:nth-child(2) div {
+    width: 100%;
+    background-color: #262626;
+    color: #fff;
+}
+
+a div:nth-child(1) div::before,
+a div:nth-child(2) div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+}
+
+a div:nth-child(1) div::before {
+    background: #262626;
+}
+
+a div:nth-child(2) div::before {
+    background: #fff;
+}
+
+a:hover div:nth-child(1) div::before {
+    transform: translateX(-100%);
+}
+
+a div:nth-child(1) span {
+    color: #fff;
+    z-index: 1;
+}
+
+a:hover div:nth-child(1) span {
+    color: #262626;
+    z-index: 1;
+}
+
+a div:nth-child(2) span {
+    color: #262626;
+    z-index: 1;
+}
+
+a:hover div:nth-child(2) span {
+    color: #fff;
+    z-index: 1;
+}
+
+a:hover div:nth-child(2) div::before {
+    transform: translateX(100%);
+}
